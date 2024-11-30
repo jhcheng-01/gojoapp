@@ -1,16 +1,18 @@
 {
   "files": {
     "main.css": "/gojoapp/static/css/main.f855e6bc.css",
-    "main.js": "/gojoapp/static/js/main.14b244ae.js",
+    "main.js": "/gojoapp/static/js/main.c5ce0526.js",
+    "static/js/885.371c812c.chunk.js": "/gojoapp/static/js/885.371c812c.chunk.js",
     "static/js/453.fb20c299.chunk.js": "/gojoapp/static/js/453.fb20c299.chunk.js",
-    "static/media/logo.svg": "/gojoapp/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/boom.mp3": "/gojoapp/static/media/boom.71cff04780cf01c032c4.mp3",
     "index.html": "/gojoapp/index.html",
     "main.f855e6bc.css.map": "/gojoapp/static/css/main.f855e6bc.css.map",
-    "main.14b244ae.js.map": "/gojoapp/static/js/main.14b244ae.js.map",
+    "main.c5ce0526.js.map": "/gojoapp/static/js/main.c5ce0526.js.map",
+    "885.371c812c.chunk.js.map": "/gojoapp/static/js/885.371c812c.chunk.js.map",
     "453.fb20c299.chunk.js.map": "/gojoapp/static/js/453.fb20c299.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.14b244ae.js"
+    "static/js/main.c5ce0526.js"
   ]
 }
