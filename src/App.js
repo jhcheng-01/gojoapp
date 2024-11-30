@@ -45,16 +45,14 @@ function App()
 
   return (
     <>
-
       <div
+        className="full-screen-div"
         style={
           { 
           backgroundImage: "url('" + gif_src + "')",
-          backgroundSize: 'cover', // Adjust as needed
-          backgroundPosition: 'center', // Adjust as needed
-          width: '100vh',
-          height: '100vh',
-          userSelect: 'none'
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          userSelect: 'none',
           }
         }
         onClick={() => 
@@ -64,11 +62,9 @@ function App()
         }
       >
 
-        <h1>Satoru Gojo's Backshot Clicker!!!</h1>
-
-        <div className="card">
-          <h1>
-            Clicks: {count}
+        <div className="center">
+          <h1 className="text-stroke">
+            Backshots: {count}
           </h1>
         </div>
 
