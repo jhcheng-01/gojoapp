@@ -64,11 +64,7 @@ function App()
         }
       >
 
-        <h1>Satoru Gojo's Backshot Clicker</h1>
-
-        <audio id="audio" loop autoplay> 
-          <source src="./sounds/piano.mp3" type="audio/mpeg"/>
-        </audio>
+        <h1>Satoru Gojo's Backshot Clicker!!!</h1>
 
         <div className="card">
           <h1>
