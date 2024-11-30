@@ -4,15 +4,19 @@ import ReactDOM from "react-dom";
 import { useEffect, useState } from 'react'
 import './App.css'
 
+import freaky from "./images/freaky.jpg"
+import paused_gif from "./images/freeze.png"
+import playing_gif from "./images/backshot.gif"
+
 import useSound from 'use-sound';
-import boom_sfx from './/sounds/boom.mp3';
+import boom_sfx from './sounds/boom.mp3';
 
 function App()
 {
   const [time, setTime] = useState(0);
   const [lct, set_lct] = useState(0);
 
-  const [gif_src, set_src] = useState(".//images/freaky.jpg");
+  const [gif_src, set_src] = useState(freaky);
   const [count, setCount] = useState(0);
   const [play_boom] = useSound(boom_sfx);
 
@@ -24,11 +28,11 @@ function App()
 
     if (lct > 0 && time <= lct + 0.15)
     {
-      set_src(".//images/backshot.gif")
+      set_src(playing_gif)
     }
     else
     {
-      set_src(".//images/freeze.png")
+      set_src(paused_gif)
     }
   });
 
@@ -63,7 +67,7 @@ function App()
         <h1>Satoru Gojo's Backshot Clicker</h1>
 
         <audio id="audio" loop autoplay> 
-          <source src=".//sounds/piano.mp3" type="audio/mpeg"/>
+          <source src="./sounds/piano.mp3" type="audio/mpeg"/>
         </audio>
 
         <div className="card">
