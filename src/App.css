@@ -11,13 +11,27 @@
   left:0;
   width: 100vw; 
   height: 100vh;
-  display: flex;
-  justify-content: center;
 }
 
 .center {
-  display: flex;
-  justify-content: center;
+  line-height: 0.1;
+  vertical-align: top;
+  align-items: center;
+}
+
+.bottom-bar {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 30vh;
+  line-height: 0.1;
+}
+
+.shop-button {
+  right: 0;
+  bottom: 0;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .text-stroke {
