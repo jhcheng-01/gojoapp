@@ -424,13 +424,13 @@ function App()
             <p>- team thukuna's last tooth (jasmine & jack)</p>
 
             <h2>final stats</h2>
-            <p className="text-stroke">
+            <p>
               backshots: {count}
             </p>
-            <p className="text-stroke">
+            <p>
               power: {power}
             </p>
-            <p className="text-stroke">
+            <p>
               aura: {aura}
             </p>
 
