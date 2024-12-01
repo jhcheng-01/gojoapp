@@ -276,7 +276,7 @@ function App()
         <Shop_Item
           img = {victory}
           name = "win the game"
-          cost = {1}
+          cost = {1000000}
           power = {0}
           aura = {0}
           description = "victory royale"
