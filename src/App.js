@@ -22,6 +22,8 @@ import rizz from "./images/rizz.gif"
 import thukuna from "./images/thukuna.jpg"
 import chill_guy from "./images/chill.png"
 import goku from "./images/goku.jpg"
+import walter from "./images/walterwhite.png"
+import subway from "./images/subwaysurfers.gif"
 import victory from "./images/victory.gif"
 
 import useSound from 'use-sound';
@@ -50,6 +52,7 @@ function App()
   const [play_victoryspeech] = useSound(victoryspeech_sfx)
   const [play_clapping] = useSound(clapping_sfx, {volume: 0.3})
 
+  const [subway_enabled, toggle_subway] = useState(false);
   const [shop_opened, toggle_shop] = useState(false);
   const [credits_opened, toggle_credits] = useState(false);
   const [game_won, win_game] = useState(false);
@@ -138,7 +141,7 @@ function App()
 
   function buy_item(cost, extra_power, extra_aura)
   {
-    if (extra_power == 0 && extra_aura == 0)
+    if (cost == 1000000)
     {
       win_game(true);
       play_clapping();
@@ -151,6 +154,11 @@ function App()
       setCount(count - cost);
       setPower(power + extra_power);
       setAura(aura + extra_aura);
+
+      if (cost == 699)
+      {
+        toggle_subway(true);
+      }
 
       play_chaching();
     }
@@ -238,12 +246,30 @@ function App()
         />
 
         <Shop_Item
+          img = {walter}
+          name = "walter white"
+          cost = {5000}
+          power = {1}
+          aura = {500}
+          description = "jesse we have to cook"
+        />
+
+        <Shop_Item
           img = {rizz}
           name = "infinite skibidi rizz"
           cost = {6999}
           power = {100}
           aura = {0}
           description = "will get you a restraining order"
+        />
+
+        <Shop_Item
+          img = {subway}
+          name = "subway surfers clip"
+          cost = {699}
+          power = {0}
+          aura = {0}
+          description = "+0 power or aura but adds a subway surfer clip on the side"
         />
 
         <Shop_Item
@@ -429,7 +455,7 @@ function App()
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           userSelect: 'none',
-          zIndex: 1
+          zIndex: 0
           }
         }
         onClick={() => 
@@ -438,7 +464,7 @@ function App()
           }
         }
       >
-
+        
         <div className="center">
           <h1 className="text-stroke">
             satoru gojo's backshots clicker
@@ -453,6 +479,7 @@ function App()
             for brainrot jia.seed hackathon 2024
           </p>
         </div>
+        {subway_enabled && (<img className="subway-surfers" src={subway}/>)}
 
         <div className="bottom-bar">
           
