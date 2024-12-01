@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/gojoapp/static/css/main.4d1b2d0b.css",
-    "main.js": "/gojoapp/static/js/main.276387b9.js",
+    "main.js": "/gojoapp/static/js/main.ade99030.js",
     "static/js/885.371c812c.chunk.js": "/gojoapp/static/js/885.371c812c.chunk.js",
     "static/js/453.fb20c299.chunk.js": "/gojoapp/static/js/453.fb20c299.chunk.js",
     "static/media/subwaysurfers.gif": "/gojoapp/static/media/subwaysurfers.ec004d89134c7ec62ad4.gif",
@@ -26,12 +26,12 @@
     "static/media/boom.mp3": "/gojoapp/static/media/boom.71cff04780cf01c032c4.mp3",
     "index.html": "/gojoapp/index.html",
     "main.4d1b2d0b.css.map": "/gojoapp/static/css/main.4d1b2d0b.css.map",
-    "main.276387b9.js.map": "/gojoapp/static/js/main.276387b9.js.map",
+    "main.ade99030.js.map": "/gojoapp/static/js/main.ade99030.js.map",
     "885.371c812c.chunk.js.map": "/gojoapp/static/js/885.371c812c.chunk.js.map",
     "453.fb20c299.chunk.js.map": "/gojoapp/static/js/453.fb20c299.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4d1b2d0b.css",
-    "static/js/main.276387b9.js"
+    "static/js/main.ade99030.js"
   ]
 }
