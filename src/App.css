@@ -40,6 +40,7 @@
   background-color: #304e87;
   overflow: auto;
   overflow-y: scroll;
+  overflow-anchor: none;
 }
 
 .shop-item {

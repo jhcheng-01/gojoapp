@@ -37,7 +37,7 @@ function App()
   const [power, setPower] = useState(1);
   const [aura, setAura] = useState(0);
 
-  const [gif_src, set_src] = useState(freaky);
+  const [gif_src, set_src] = useState(paused_gif);
   const [count, setCount] = useState(0);
 
   const [play_boom] = useSound(boom_sfx);
@@ -49,30 +49,31 @@ function App()
   const [shop_opened, toggle_shop] = useState(false);
   const [game_won, win_game] = useState(false);
 
-  /*
-  useEffect(() => {
-    let interval = null;
-    interval = setInterval(() => {
-      setTime((time) => time + 0.00001);
-    }, 10);
-
-    if (time > ls + 1)
+  function add_aura(added_aura)
+  {
+    if (!shop_opened)
     {
-      setCount(count + aura);
-      set_ls(time);
-    }
-
-    if (lct > 0 && time <= lct + 0.15)
-    {
-      set_src(playing_gif)
+      console.log("adding aura");
+      setCount((count) => count + added_aura);
     }
     else
     {
-      set_src(paused_gif)
+      console.log("cannot add aura");
     }
-    return;
-  });
-  */
+    
+  }
+
+  useEffect(() => {
+
+    const interval = setInterval(() => {
+      console.log("aura: " + aura)
+      add_aura(aura);
+    }, 1000);
+  
+    return () => clearInterval(interval);
+    
+  }, [aura, shop_opened]);
+
 
   function handle_click()
   {
@@ -81,6 +82,10 @@ function App()
       setCount((count) => count + power);
       play_boom();
       set_lct(time);
+      set_src(playing_gif);
+      setTimeout(() => {
+        set_src(paused_gif);
+      }, 100);
     }
   }
 
@@ -127,8 +132,8 @@ function App()
     if (count >= cost)
     {
       setCount(count - cost);
-      setPower(extra_power + power);
-      setAura(extra_aura + aura);
+      setPower(power + extra_power);
+      setAura(aura + extra_aura);
 
       play_chaching();
     }
@@ -166,7 +171,7 @@ function App()
           name = "dancing toji"
           cost = {50}
           power = {0}
-          aura = {1}
+          aura = {2}
           description = "hop on league of legends"
         />
 
@@ -184,7 +189,7 @@ function App()
           name = "hollow purple"
           cost = {250}
           power = {3}
-          aura = {2}
+          aura = {7}
           description = "very unsportsmanlike"
         />
 
@@ -193,7 +198,7 @@ function App()
           name = "chill guy"
           cost = {500}
           power = {0}
-          aura = {20}
+          aura = {50}
           description = "One day we will have to answer to God for our sins"
         />
 
@@ -202,7 +207,7 @@ function App()
           name = "mahoraga"
           cost = {1000}
           power = {12}
-          aura = {10}
+          aura = {80}
           description = "the big raga"
         />
 
@@ -211,7 +216,7 @@ function App()
           name = "deodorant"
           cost = {5000}
           power = {45}
-          aura = {30}
+          aura = {100}
           description = "for all the smelly CS majors"
         />
 
@@ -229,7 +234,7 @@ function App()
           name = "gojo taper fade"
           cost = {15000}
           power = {200}
-          aura = {100}
+          aura = {200}
           description = "oough...."
         />
 
@@ -238,7 +243,7 @@ function App()
           name = "thukuna"
           cost = {50000}
           power = {500}
-          aura = {200}
+          aura = {400}
           description = "it ith i! the kingth of curtheth!"
         />
 
