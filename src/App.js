@@ -314,6 +314,7 @@ function App()
               <h3>Jujutsu Kaisen</h3>
               <h3>Dragonball</h3>
               <h3>Fortnite</h3>
+              <h3>DaFuqBoom (Skibidi Toilet)</h3>
               <h3>Phillip Banks (Chill Guy)</h3>
 
               <h3>1shymura</h3>
