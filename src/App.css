@@ -55,11 +55,13 @@
 }
 
 .shop-item {
+  padding: 20px 0;
   border-style: solid;
   border-width: 1px;
   line-height: 0.1;
   color: white;
   height: 250px;
+  text-align: center;
 }
 
 .square-image {

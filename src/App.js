@@ -15,7 +15,7 @@ import shop_icon from "./images/shop.png"
 
 import toji from "./images/toji.gif"
 import purple from "./images/purple.gif"
-import mahoraga from "./images/mahoraga.jpg"
+import skibidi from "./images/skibidi.jpg"
 import deodorant from "./images/deodorant.png"
 import taperfade from "./images/taperfade.gif"
 import rizz from "./images/rizz.gif"
@@ -185,7 +185,7 @@ function App()
       <ul>
         <Shop_Item
           img = {toji}
-          name = "dancing toji"
+          name = "dancing roblox toji"
           cost = {50}
           power = {0}
           aura = {2}
@@ -207,7 +207,7 @@ function App()
           cost = {250}
           power = {3}
           aura = {7}
-          description = "very unsportsmanlike"
+          description = "this is me throwing rocks at my neighbors window"
         />
 
         <Shop_Item
@@ -220,12 +220,12 @@ function App()
         />
 
         <Shop_Item
-          img = {mahoraga}
-          name = "mahoraga"
+          img = {skibidi}
+          name = "skibdi toilet"
           cost = {1000}
           power = {12}
           aura = {80}
-          description = "the big raga"
+          description = "bop bop"
         />
 
         <Shop_Item
@@ -442,6 +442,9 @@ function App()
           <h1 className="text-stroke">
             satoru gojo's backshots clicker
           </h1>
+          <h2 className="text-stroke">
+            click anywhere on screen to backshot
+          </h2>
           <p className="text-stroke">
             by team thukuna's last tooth (jasmine & jack)
           </p>
