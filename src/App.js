@@ -9,11 +9,21 @@ import paused_gif from "./images/freeze.png"
 import playing_gif from "./images/backshot.gif"
 
 import shop_icon from "./images/shop.png"
+import toji from "./images/toji.gif"
+import purple from "./images/purple.gif"
+import mahoraga from "./images/mahoraga.jpg"
+import deodorant from "./images/deodorant.png"
+import taperfade from "./images/taperfade.gif"
+import rizz from "./images/rizz.gif"
+import thukuna from "./images/thukuna.jpg"
 import chill_guy from "./images/chill.png"
 import goku from "./images/goku.jpg"
+import victory from "./images/victory.gif"
 
 import useSound from 'use-sound';
 import boom_sfx from './sounds/boom.mp3';
+import getout_sfx from './sounds/getout.mp3';
+import chaching_sfx from './sounds/chaching.mp3';
 
 function App()
 {
@@ -27,7 +37,11 @@ function App()
 
   const [gif_src, set_src] = useState(freaky);
   const [count, setCount] = useState(0);
+
   const [play_boom] = useSound(boom_sfx);
+  const [play_chaching] = useSound(chaching_sfx);
+  const [play_getout] = useSound(getout_sfx);
+
   const [shop_opened, toggle_shop] = useState(false);
 
   /*
@@ -102,6 +116,12 @@ function App()
       setCount(count - cost);
       setPower(extra_power + power);
       setAura(extra_aura + aura);
+
+      play_chaching();
+    }
+    else
+    {
+      play_getout();
     }
   }
 
@@ -114,7 +134,7 @@ function App()
           <h1 className="text-stroke">{props.name}</h1>
           <p>{props.description}</p>
           {props.power > 0 && <h3>power: +{props.power}</h3>}
-          {props.aura > 0 && <h3>power: +{props.aura}</h3>}
+          {props.aura > 0 && <h3>aura: +{props.aura}</h3>}
           <button type="button" onClick={() => buy_item(props.cost, props.power, props.aura)}>
             <h3>buy (cost: {props.cost})</h3>
           </button>
@@ -129,12 +149,30 @@ function App()
     <div className="catalog">
       <ul>
         <Shop_Item
+          img = {toji}
+          name = "dancing toji"
+          cost = {50}
+          power = {0}
+          aura = {1}
+          description = "hop on league of legends"
+        />
+
+        <Shop_Item
           img = {freaky}
           name = "extra freak"
-          cost = {50}
+          cost = {100}
           power = {1}
           aura = {0}
           description = "g-g-g-gyatt?!?"
+        />
+
+        <Shop_Item
+          img = {purple}
+          name = "hollow purple"
+          cost = {250}
+          power = {3}
+          aura = {2}
+          description = "very unsportsmanlike"
         />
 
         <Shop_Item
@@ -143,7 +181,52 @@ function App()
           cost = {500}
           power = {0}
           aura = {20}
-          description = "yea"
+          description = "One day we will have to answer to God for our sins"
+        />
+
+        <Shop_Item
+          img = {mahoraga}
+          name = "mahoraga"
+          cost = {1000}
+          power = {12}
+          aura = {10}
+          description = "the big raga"
+        />
+
+        <Shop_Item
+          img = {deodorant}
+          name = "deodorant"
+          cost = {5000}
+          power = {45}
+          aura = {30}
+          description = "for all the smelly CS majors"
+        />
+
+        <Shop_Item
+          img = {rizz}
+          name = "infinite skibidi rizz"
+          cost = {6999}
+          power = {100}
+          aura = {0}
+          description = "will get you a restraining order"
+        />
+
+        <Shop_Item
+          img = {taperfade}
+          name = "gojo taper fade"
+          cost = {15000}
+          power = {200}
+          aura = {100}
+          description = "oough...."
+        />
+
+        <Shop_Item
+          img = {thukuna}
+          name = "thukuna"
+          cost = {50000}
+          power = {500}
+          aura = {200}
+          description = "it ith i! the kingth of curtheth!"
         />
 
         <Shop_Item
@@ -153,6 +236,13 @@ function App()
           power = {1000}
           aura = {0}
           description = "i hear your brainrot is strong! let me fight it!"
+        />
+
+        <Shop_Item
+          img = {victory}
+          name = "win the game"
+          cost = {1000000}
+          description = "victory royale"
         />
       </ul>
     </div>
@@ -218,6 +308,9 @@ function App()
           </h1>
           <p className="text-stroke">
             by team thukuna's last tooth (jasmine & jack)
+          </p>
+          <p className="text-stroke">
+            for brainrot jia.seed hackathon 2024
           </p>
         </div>
 
