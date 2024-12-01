@@ -8,7 +8,11 @@ import freaky from "./images/freaky.jpg"
 import paused_gif from "./images/freeze.png"
 import playing_gif from "./images/backshot.gif"
 
+import yaoi from "./images/yaoi.png"
+
+import credits_icon from "./images/credits.jpg"
 import shop_icon from "./images/shop.png"
+
 import toji from "./images/toji.gif"
 import purple from "./images/purple.gif"
 import mahoraga from "./images/mahoraga.jpg"
@@ -44,9 +48,10 @@ function App()
   const [play_chaching] = useSound(chaching_sfx);
   const [play_getout] = useSound(getout_sfx);
   const [play_victoryspeech] = useSound(victoryspeech_sfx)
-  const [play_clapping] = useSound(clapping_sfx, {volume: 0.2})
+  const [play_clapping] = useSound(clapping_sfx, {volume: 0.3})
 
   const [shop_opened, toggle_shop] = useState(false);
+  const [credits_opened, toggle_credits] = useState(false);
   const [game_won, win_game] = useState(false);
 
   function add_aura(added_aura)
@@ -72,7 +77,7 @@ function App()
   
     return () => clearInterval(interval);
     
-  }, [aura, shop_opened]);
+  }, [aura, click_enabled]);
 
 
   function handle_click()
@@ -98,6 +103,18 @@ function App()
   function close_shop()
   {
     toggle_shop(false);
+    toggle_click(true);
+  }
+
+  function open_credits()
+  {
+    toggle_credits(true);
+    toggle_click(false);
+  }
+
+  function close_credits()
+  {
+    toggle_credits(false);
     toggle_click(true);
   }
 
@@ -269,6 +286,59 @@ function App()
     )
   }
 
+  function Credits()
+  {
+    return (
+      <>
+        <div
+          className="full-screen-div"
+          style={
+            { 
+            backgroundColor: 'rebeccapurple',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            userSelect: 'none',
+            zIndex: 2
+            }
+          }
+        >
+
+          <div className="center">
+            <Stats/>
+          </div>
+
+          <h1 style={{color: "white"}}>Images used in this project belong to the following sources/artists:</h1>
+          <div className="credits">
+            <ul>
+              <h3>Tenor</h3>
+              <h3>Jujutsu Kaisen</h3>
+              <h3>Dragonball</h3>
+              <h3>Fortnite</h3>
+              <h3>Phillip Banks (Chill Guy)</h3>
+
+              <h3>1shymura</h3>
+              <h3>Xiao_rei</h3>
+              <h3>Junko</h3>
+              <h3>Suhmizo</h3>
+              <h3>yu_uue</h3>
+              <h3>bluebees</h3>
+              <h3>xxgojoxx</h3>
+              <h3>jaryn</h3>
+              <h3>sumi</h3>
+            </ul>
+          </div>
+          <p style={{color: "white"}}>If your art is featured but we didn't get your name, please notify us so we can add you.</p>
+          <p style={{color: "white"}}>If you are an artist and want your art removed, please notify us so we can do so.</p>
+
+          <button type="button" onClick={() => close_credits()}>
+            <h3>close credits</h3>
+          </button>
+
+        </div>
+      </>
+    )
+  }
+
   function Shop()
   {
     return (
@@ -336,6 +406,8 @@ function App()
             <p className="text-stroke">
               aura: {aura}
             </p>
+
+            <img src={yaoi}></img>
           </div>
 
         </div>
@@ -347,6 +419,7 @@ function App()
     <>
       {game_won && <Win/>}
       {shop_opened && <Shop/>}
+      {credits_opened && <Credits/>}
       <div
         className="full-screen-div"
         style={
@@ -383,6 +456,9 @@ function App()
           <div className="shop-button">
             <button type="button" onClick={() => open_shop()}>
               <img src={shop_icon} alt="Shop" width="100" height="100"></img>
+            </button>
+            <button type="button" onClick={() => open_credits()}>
+              <img src={credits_icon} alt="Credits" width="100" height="100"></img>
             </button>
           </div>
         </div>
