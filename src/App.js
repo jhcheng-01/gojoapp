@@ -24,6 +24,8 @@ import useSound from 'use-sound';
 import boom_sfx from './sounds/boom.mp3';
 import getout_sfx from './sounds/getout.mp3';
 import chaching_sfx from './sounds/chaching.mp3';
+import victoryspeech_sfx from './sounds/victoryspeech.mp3';
+import clapping_sfx from './sounds/clapping.mp3';
 
 function App()
 {
@@ -41,8 +43,11 @@ function App()
   const [play_boom] = useSound(boom_sfx);
   const [play_chaching] = useSound(chaching_sfx);
   const [play_getout] = useSound(getout_sfx);
+  const [play_victoryspeech] = useSound(victoryspeech_sfx)
+  const [play_clapping] = useSound(clapping_sfx, {volume: 0.2})
 
   const [shop_opened, toggle_shop] = useState(false);
+  const [game_won, win_game] = useState(false);
 
   /*
   useEffect(() => {
@@ -111,6 +116,14 @@ function App()
 
   function buy_item(cost, extra_power, extra_aura)
   {
+    if (extra_power == 0 && extra_aura == 0)
+    {
+      win_game(true);
+      play_clapping();
+      play_victoryspeech();
+      return;
+    }
+
     if (count >= cost)
     {
       setCount(count - cost);
@@ -241,7 +254,9 @@ function App()
         <Shop_Item
           img = {victory}
           name = "win the game"
-          cost = {1000000}
+          cost = {1}
+          power = {0}
+          aura = {0}
           description = "victory royale"
         />
       </ul>
@@ -281,8 +296,51 @@ function App()
     )
   }
 
+  function Win()
+  {
+    return (
+      <>
+        <div
+          className="full-screen-div"
+          style={
+            { 
+            backgroundColor: 'tan',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            userSelect: 'none',
+            zIndex: 3
+            }
+          }
+        >
+
+          
+
+          <div className="center">
+            <h1>epic win</h1>
+            <p>thanks for playing</p>
+            <p>we hope your brain has been sufficiently rotted</p>
+            <p>- team thukuna's last tooth (jasmine & jack)</p>
+
+            <h2>final stats</h2>
+            <p className="text-stroke">
+              backshots: {count}
+            </p>
+            <p className="text-stroke">
+              power: {power}
+            </p>
+            <p className="text-stroke">
+              aura: {aura}
+            </p>
+          </div>
+
+        </div>
+      </>
+    )
+  }
+
   return (
     <>
+      {game_won && <Win/>}
       {shop_opened && <Shop/>}
       <div
         className="full-screen-div"
