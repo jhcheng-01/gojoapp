@@ -1,13 +1,14 @@
 {
   "files": {
     "main.css": "/gojoapp/static/css/main.1a0c3b34.css",
-    "main.js": "/gojoapp/static/js/main.ca3475cc.js",
+    "main.js": "/gojoapp/static/js/main.cf003025.js",
     "static/js/885.371c812c.chunk.js": "/gojoapp/static/js/885.371c812c.chunk.js",
     "static/js/453.fb20c299.chunk.js": "/gojoapp/static/js/453.fb20c299.chunk.js",
     "static/media/rizz.gif": "/gojoapp/static/media/rizz.bedf81e33172e8841f91.gif",
     "static/media/taperfade.gif": "/gojoapp/static/media/taperfade.63eee8023d850d3caf98.gif",
     "static/media/toji.gif": "/gojoapp/static/media/toji.8341fc65b10e962e6f10.gif",
     "static/media/purple.gif": "/gojoapp/static/media/purple.b1f34a4e769902101211.gif",
+    "static/media/yaoi.png": "/gojoapp/static/media/yaoi.75c404152795af81d684.png",
     "static/media/victory.gif": "/gojoapp/static/media/victory.5a32a623aece1ed5a627.gif",
     "static/media/freeze.png": "/gojoapp/static/media/freeze.95d6c7b037c2c2b0904e.png",
     "static/media/backshot.gif": "/gojoapp/static/media/backshot.5320e3a5196faf016258.gif",
@@ -22,12 +23,12 @@
     "static/media/boom.mp3": "/gojoapp/static/media/boom.71cff04780cf01c032c4.mp3",
     "index.html": "/gojoapp/index.html",
     "main.1a0c3b34.css.map": "/gojoapp/static/css/main.1a0c3b34.css.map",
-    "main.ca3475cc.js.map": "/gojoapp/static/js/main.ca3475cc.js.map",
+    "main.cf003025.js.map": "/gojoapp/static/js/main.cf003025.js.map",
     "885.371c812c.chunk.js.map": "/gojoapp/static/js/885.371c812c.chunk.js.map",
     "453.fb20c299.chunk.js.map": "/gojoapp/static/js/453.fb20c299.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1a0c3b34.css",
-    "static/js/main.ca3475cc.js"
+    "static/js/main.cf003025.js"
   ]
 }
