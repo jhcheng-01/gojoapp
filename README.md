@@ -1,6 +1,6 @@
 # satoru gojo's backshots clicker
 
-satoru gojo needs your help! the evil thukuna is releasing bad jujutsu and he needs to use his imaginary technique: cursed backshots to fight back! get to one million backshots and save the world or something idk
+satoru gojo needs your help! the evil thukuna is releasing bad jujutsu and he needs to use his imaginary technique: cursed backshots to fight back! get to one million backshots and save the world or something idk yea
 
 
 made for brainrot jia.seed hackathon 2024
